@@ -88,7 +88,7 @@ function render() {
     const v = d && d[k.id], f = fit(pts(k));
     return `<p style="--c:${k.cor}"><b>${k.nome}:</b> ${v != null ? v + " g medidos" : "sem medição"}${f ? " · pela função: " + nf(f.at(t)) + " g" : ""}</p>`;
   }).join("");
-  h += d ? `<p>Horário: ${d.hora || "—"} · Dupla: ${d.dupla || "—"}</p><h3>Troca</h3><p>${d.troca || "—"}</p><h3>Observação do dia</h3><p>${d.obs || "Nenhuma observação neste dia."}</p>`
+  h += d ? `<h3>Troca</h3><p>${d.troca || "—"}</p><h3>Observação do dia</h3><p>${d.obs || "Nenhuma observação neste dia."}</p>`
          : "<p>Ainda não há registro para este dia.</p>";
   $("dia").innerHTML = h;
 }
