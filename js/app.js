@@ -51,8 +51,8 @@ function chart(list) {
   return s + "</g></svg>";
 }
 
-const legenda = list => `<div class="leg">${list.map(k => `<span><i style="background:${k.cor}"></i>${k.nome} (${k.cn})</span>`).join("")}<span><i class="pt"></i>ponto medido</span><span><u></u>curva da função</span>${list.map(k => `<span><u style="border-color:${k.prev}"></u>previsão: ${k.nome}</span>`).join("")}</div>`;
-const ZOOM = `<div class="zoom"><button data-z="in">＋</button><button data-z="out">－</button><button data-z="home">Dados atuais</button><button data-z="all">Ver tudo (até 22/10)</button><small>Dica: arraste o gráfico ou a barra para mover. Role o mouse ou arraste as pontas da barra para dar zoom.</small></div>`;
+const legenda = list => `<div class="leg">${list.map(k => `<span><i style="background:${k.cor}"></i>${k.nome} (${k.cn})</span>`).join("")}<span><i class="pt"></i>ponto medido</span>${list.map(k => `<span><u style="border-color:${k.prev}"></u>previsão: ${k.nome}</span>`).join("")}</div>`;
+const ZOOM = `<div class="zoom"><button data-z="in">＋</button><button data-z="out">－</button><button data-z="home">Dados atuais</button><button data-z="all">Ver tudo (até 22/10)</button></div>`;
 
 function zoom(f, ax) {
   let [a, b] = view; const w = Math.min(MAXT, Math.max(3, (b - a) * f));
